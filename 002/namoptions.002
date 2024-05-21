@@ -1,0 +1,77 @@
+&RUN
+iexpnr       = 002
+runtime      = 11.
+trestart     = 10.
+dtmax        = 0.1
+irandom      = 43
+randu        = 0.01
+ladaptive    = .true.
+nprocx       = 4
+nprocy       = 2
+libm         = .true.
+/
+
+&OUTPUT
+lfielddump   = .true.
+tfielddump   = 0.1
+fieldvars    = 'u0,v0,w0,p0'
+ltdump       = .true.
+lxytdump     = .true.
+tstatsdump   = 10.
+tsample      = 0.2
+/
+
+&DOMAIN
+itot         = 64
+jtot         = 64
+ktot         = 64
+xlen         = 64
+ylen         = 64
+/
+
+&PHYSICS
+ps           = 101500.00
+igrw_damp    = 0
+/
+
+&DYNAMICS
+ipoiss       = 0
+/
+
+&NAMSUBGRID
+lvreman      = .true.
+/
+
+&BC
+BCxm         = 3
+BCtopm       = 3
+wtsurf       = 0.
+wqsurf       = 0.
+thls         = 288.
+z0           = 0.0009
+z0h          = 0.000067
+/
+
+&WALLS
+nfcts = 202
+nsolpts_u = 18496
+nsolpts_v = 18496
+nsolpts_w = 21504
+nsolpts_c = 17408
+nbndpts_u = 8856
+nbndpts_v = 8856
+nbndpts_w = 8720
+nbndpts_c = 8720
+nfctsecs_u = 8107
+nfctsecs_v = 8107
+nfctsecs_w = 5888
+nfctsecs_c = 0
+/
+
+&INPS
+zsize        = 64
+u0           = 4.9524
+stl_file     = geom.STL
+stl_ground   = .true.
+diag_neighbs = .true.
+/
